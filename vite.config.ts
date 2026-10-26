@@ -96,6 +96,7 @@ export default (async ({ command, mode }: { command: string; mode: string }) => 
       ignoreOutdatedRequests: true,
     },
     build: {
+      minify: false,
       rollupOptions: {
         onwarn(warning, defaultHandler) {
           if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
@@ -110,6 +111,9 @@ export default (async ({ command, mode }: { command: string; mode: string }) => 
           "@revenuecat/purchases-capacitor",
           "@capacitor/local-notifications",
         ],
+        output: {
+          exports: "named",
+        },
       },
     },
     server: {
