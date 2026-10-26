@@ -1,12 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": ".output",
-  "functions": {
-    "server/index.mjs": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
-    { "src": "/(.*)", "dest": "/server/index.mjs" }
-  ]
+  "outputDirectory": ".output"
 }
