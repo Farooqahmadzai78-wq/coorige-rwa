@@ -28,11 +28,11 @@ export default (async ({ command, mode }: { command: string; mode: string }) => 
     }),
   );
 
-  // Target Node.js server runtime for AI Studio deployment
+  // Target Vercel edge runtime for serverless deployment
   if (command === "build") {
     internalPlugins.push(
       nitro({
-        preset: "node-server",
+        preset: "vercel",
         output: {
           dir: ".output",
           serverDir: ".output/server",
